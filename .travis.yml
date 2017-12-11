@@ -1,0 +1,14 @@
+language: java
+notifications:
+  email: false
+services:
+  - mysql
+
+before_install:
+  - mysql -e 'CREATE DATABASE IF NOT EXISTS hello_test;'
+  
+env: 
+  - SPRING_DATASOURCE_URL=jdbc:mysql://localhost:3306/hello_test 
+  - SPRING_DATASOURCE_USERNAME=travis 
+  - SPRING_DATASOURCE_PASSWORD="" 
+  - SPRING_DATASOURCE_DRIVERCLASSNAME=com.mysql.jdbc.Driver
